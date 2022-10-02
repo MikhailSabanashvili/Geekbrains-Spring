@@ -1,6 +1,7 @@
 package com.example.geekbrainsspring.service;
 
 import com.example.geekbrainsspring.entities.Product;
+import com.example.geekbrainsspring.entities.Products;
 import com.example.geekbrainsspring.repositories.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -28,6 +29,10 @@ public class ProductService {
     public Product findById(Long id) {
         Optional<Product> productOptional = productRepository.findById(id);
         return productOptional.orElseThrow();
+    }
+
+    public void saveProducts(Products products) {
+        productRepository.saveAll(products.getProducts());
     }
 
 
