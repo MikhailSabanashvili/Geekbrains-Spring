@@ -37,9 +37,6 @@ public class StudentsController {
 
     @GetMapping("/processForm")
     public String processForm(@ModelAttribute("student") Student student) {
-        System.out.println();
         return "student-form-result";
     }
-
-
 }
