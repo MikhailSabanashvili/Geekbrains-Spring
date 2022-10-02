@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Student Form Result</h1>
+<br>
+Student:
+<br>
+Name: <span th:text="${student.firstName}" ></span>
+<br>
+Lastname: <span th:text="${student.lastName}" ></span>
+<br>
+From: <span th:text="${student.country}" ></span>
+<br>
+<br>
+
+Programming Languages:
+<br>
+<ul>
+  <th:forEach th:each="language : ${student.programmingLanguages}">
+    <li th:text="${language}"></li>
+  </th:forEach>
+</ul>
+</body>
+</html>

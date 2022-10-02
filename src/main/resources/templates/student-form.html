@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>Student form</title>
+</head>
+<body>
+<form th:action="processForm" th:object="${student}" method="get">
+  <div>
+    <label>Student firstname:</label>
+    <input type="text" th:field="${student.firstName}" placeholder="firstname" />
+  </div>
+  <div>
+    <label>Student lastname: </label>
+    <input type="text" th:field="${student.lastName}" placeholder="lastname" />
+  </div>
+  <div>
+    <select th:field="${student.country}">
+      <option th:value="Russia" th:text="Russia"></option>
+      <option th:value="France" th:text="France"></option>
+    </select>
+  </div>
+  <div>
+    Java<input id="Java" type="checkbox" name="programmingLanguages" th:field="${student.programmingLanguages}" th:value="'Java'">
+    C++ <input id="C++" type="checkbox" name="programmingLanguages" th:field="${student.programmingLanguages}" th:value="'C++'">
+    PHP <input id="PHP" type="checkbox" name="programmingLanguages" th:field="${student.programmingLanguages}" th:value="'PHP'">
+  </div>
+  <br>
+  <input type="submit" value="Submit" />
+
+</form>
+</body>
+</html>

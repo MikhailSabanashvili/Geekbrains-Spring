@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+</head>
+
+<body>
+<h1>Welcome page</h1>
+
+<tr th:each="student: ${students.students}">
+  <li th:text="${student.firstName}"></li>
+  <li th:text="${student.lastName}"></li>
+</tr>
+
+</body>
+</html>
