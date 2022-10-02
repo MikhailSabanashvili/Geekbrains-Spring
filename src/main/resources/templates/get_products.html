@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product list</title>
+</head>
+<body>
+<ul>
+    <th:forEach th:each="product : ${products.products}">
+        Product:
+        <br>
+        Product id: <span th:text="${product.id}"></span>
+        <br>
+        Product title: <span th:text="${product.title}"></span>
+        <br>
+        Product cost: <span th:text="${product.cost}"></span>
+        <br>
+        <br>
+        <br>
+    </th:forEach>
+</ul>
+</body>
+</html>

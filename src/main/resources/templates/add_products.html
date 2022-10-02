@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Add products</title>
+</head>
+<body>
+
+<!--<script type="text/javascript">function add_fields() {-->
+<!--    document.getElementById("myTable").insertRow(-1).innerHTML = '<td>\n' +-->
+<!--        '            <input type="text" th:field="${product.id}" placeholder="id" />\n' +-->
+<!--        '        </td>\n' +-->
+<!--        '        <td>\n' +-->
+<!--        '            <input type="text" th:field="${product.title}" placeholder="title" />\n' +-->
+<!--        '        </td>\n' +-->
+<!--        '        <td>\n' +-->
+<!--        '            <input type="text" th:field="${product.cost}" placeholder="cost" />\n' +-->
+<!--        '        </td>';-->
+<!--}</script>-->
+
+<form th:action="getProducts" th:object="${products}" method="get">
+<table id="myTable">
+    <tbody>
+    <tr><th>id</th><th>title</th><th>cost</th></tr>
+    <tr th:each="product, itemStat : *{products}">
+        <td><input th:field="*{products[__${itemStat.index}__].id}" /></td>
+        <td><input th:field="*{products[__${itemStat.index}__].title}" /></td>
+        <td><input th:field="*{products[__${itemStat.index}__].cost}" /></td>
+    </tr>
+    </tbody>
+</table>
+<!--<p>-->
+<!--    <a href="javascript://" onclick="add_fields();return false;">Add product</a>-->
+<!--</p>-->
+
+<input type="submit" value="Submit" />
+</form>
+</body>
+</html>
